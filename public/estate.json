@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "estate_title": "Luxury Resort Villa",
+      "segment_name": "Resorts",
+      "description": "Experience luxury and comfort in this stunning resort villa. With breathtaking views and top-notch amenities, it's the perfect getaway destination.",
+      "price": "$1000 per night",
+      "status": "rent",
+      "area": "5000 sq ft",
+      "location": "Tropical Paradise Island",
+      "facilities": ["Infinity Pool", "Private Beach Access", "Spa", "Gourmet Dining"],
+      "image": "https://i.ibb.co/nm6wW5K/light-garden-luxury-pool-nature.jpg"
+    },
+    {
+      "id": 2,
+      "estate_title": "Cozy Beachfront Cottage",
+      "segment_name": "Vacation Rentals",
+      "description": "Escape to this charming beachfront cottage, ideal for a romantic retreat or a family vacation. Enjoy stunning sunsets and the sound of waves crashing.",
+      "price": "$200 per night",
+      "status": "rent",
+      "area": "800 sq ft",
+      "location": "Sandy Shores Beach",
+      "facilities": ["Direct Beach Access", "Fully Equipped Kitchen", "Outdoor BBQ Area"],
+      "image": "https://i.ibb.co/zGVttjB/beautiful-tropical-beach-front-hotel-resort-with-swimming-pool-paradise-destination-vacations-ge.jpg"
+    },
+    {
+      "id": 3,
+      "estate_title": "City Center Boutique Hotel",
+      "segment_name": "Hotels",
+      "description": "Experience urban sophistication in this stylish boutique hotel located in the heart of the city. Impeccable service and modern amenities await you.",
+      "price": "$300 per night",
+      "status": "rent",
+      "area": "3000 sq ft",
+      "location": "Downtown Metropolis",
+      "facilities": ["24/7 Concierge", "Fitness Center", "Rooftop Bar"],
+      "image": "https://i.ibb.co/HGf92wS/leisure-beautiful-health-garden-landscape.jpg"
+    },
+    {
+      "id": 4,
+      "estate_title": "Mountain Lodge Retreat",
+      "segment_name": "Lodges",
+      "description": "Escape to nature in this cozy mountain lodge. Surrounded by breathtaking scenery and outdoor activities, it's the perfect retreat for outdoor enthusiasts.",
+      "price": "$1500 per week",
+      "status": "rent",
+      "area": "2500 sq ft",
+      "location": "Pine Valley",
+      "facilities": ["Fireplace", "Hiking Trails Access", "Outdoor Jacuzzi"],
+      "image": "https://i.ibb.co/s9Mcr23/hotel-reflected-water.jpg"
+    },
+    {
+      "id": 5,
+      "estate_title": "Quaint Guesthouse",
+      "segment_name": "Guesthouses",
+      "description": "Experience the charm of this historic guesthouse, nestled in a picturesque village. Enjoy personalized service and a homely atmosphere.",
+      "price": "$100 per night",
+      "status": "rent",
+      "area": "1500 sq ft",
+      "location": "Rural Countryside",
+      "facilities": ["Garden Patio", "Home-cooked Breakfast", "Bicycle Rentals"],
+      "image": "https://i.ibb.co/hK4NT9n/relax-area-resort.jpg"
+    }
+  ]
+  
