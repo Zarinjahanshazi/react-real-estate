@@ -43,9 +43,20 @@ const Estate = () => {
                 <div className="hero-overlay rounded-2xl bg-opacity-60"></div>
                 <div className="hero-content rounded-2xl text-center text-neutral-content">
                     <div className="max-w-md">
-                    <div className="bg-slate-500 rounded-[30px]">
-                    <h1 className="mb-5 text-5xl font-bold text-red-400">{land.estate_title}</h1>
+                    <div className="bg-slate-500 p-8 rounded-[30px]">
+                    <h1 className="mb-5 text-2xl font-bold text-red-400">{land.estate_title}</h1>
                     <p className="mb-5">{land.description}</p>
+                    <div className="items-center">
+                    <div className="flex justify-center gap-4">
+                    <p><span className="text-red-400">Price:</span>{land.price}</p>
+                    <p><span className="text-red-400">Status:</span>{land.status}</p>
+                    </div>
+                    <div className="flex justify-center gap-4">
+                    <p><span className="text-red-400">Area:</span>{land.area}</p>
+                    <p><span className="text-red-400">Location:</span>{land.location}</p>
+                    </div>
+                    </div>
+                    
                     <Link to='/'><button className="btn btn-primary">Back to Home</button></Link>
                     </div>
                     </div>

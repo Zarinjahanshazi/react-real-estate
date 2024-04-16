@@ -11,7 +11,7 @@ const Property = () => {
 
     useEffect(() =>{
         AOS.init({
-            duration: "1000"
+            duration: "2000"
         });
     },[])
     return (
@@ -39,43 +39,69 @@ const Property = () => {
       
     </Swiper>
             </div>
-            <div   className="hero min-h-screen bg-base-200" data-aos="fade-left">
+            <div   className="hero my-10 bg-base-200" data-aos="fade-left">
   <div className="hero-content flex-col lg:flex-row">
-    <img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" className="max-w-sm rounded-lg shadow-2xl" />
+    <img src="https://i.ibb.co/ygmtK2p/view-pool-hotel-ocean-water.jpg" className="max-w-sm rounded-lg shadow-2xl" />
     <div>
-      <h1 className="text-5xl font-bold">Box Office News!</h1>
-      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <button className="btn btn-primary">Get Started</button>
+      <h1 className="text-5xl font-bold">Hotels</h1>
+      <p className="py-6"> Where dreams meet the sea. Dive into luxury, unwind with stunning views, and immerse yourself in an oasis of serenity and comfort.</p>
+      <button className="btn btn-primary">View Details</button>
     </div>
   </div>
 </div>
 
-<div>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, tenetur?</p>
-</div>
 
-<div className="hero min-h-screen bg-base-200" data-aos="fade-right">
+
+<div className="hero my-10 bg-base-200" data-aos="fade-right">
   <div className="hero-content flex-col lg:flex-row">
-    <img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" className="max-w-sm rounded-lg shadow-2xl" />
+    <img src="https://i.ibb.co/7CkvhKc/luxury-modern-style-bedroom-interior-hotel-bedroom-generative-ai-illustration.jpg" className="max-w-sm rounded-lg shadow-2xl" />
     <div>
-      <h1 className="text-5xl font-bold">Box Office News!</h1>
-      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <button className="btn btn-primary">Get Started</button>
+      <h1 className="text-5xl font-bold">Motels</h1>
+      <p className="py-6">Ocean Heaven Motel: Your coastal retreat. Experience comfort by the shore with stunning ocean vistas, warm hospitality, and a serene ambiance for a memorable stay.</p>
+      <button className="btn btn-primary">View Details</button>
     </div>
   </div>
 </div>
 
-<div>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, tenetur?</p>
-</div>
 
-<div className="hero min-h-screen bg-base-200" data-aos="zoom-in">
+
+<div className="hero my-10 bg-base-200" data-aos="zoom-in">
   <div className="hero-content flex-col lg:flex-row">
-    <img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" className="max-w-sm rounded-lg shadow-2xl" />
+    <img src="https://i.ibb.co/X8Npxsr/colonial-style-house-night-scene.jpg" className="max-w-sm rounded-lg shadow-2xl" />
     <div>
-      <h1 className="text-5xl font-bold">Box Office News!</h1>
-      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <button className="btn btn-primary">Get Started</button>
+      <h1 className="text-5xl font-bold"> Resorts</h1>
+      <p className="py-6">Your gateway to paradise. Indulge in luxury amidst coastal serenity. Enjoy pristine beaches, world-class amenities, and unforgettable moments by the sea.</p>
+      <button className="btn btn-primary">View Details</button>
+    </div>
+  </div>
+</div>
+<div className="hero my-10 bg-base-200" data-aos="slide-right">
+  <div className="hero-content flex-col lg:flex-row">
+    <img src="https://i.ibb.co/rMpWfb4/spa-salon-with-beach-view.jpg" className="max-w-sm rounded-lg shadow-2xl" />
+    <div>
+      <h1 className="text-5xl font-bold"> Vacation Rentals</h1>
+      <p className="py-6">Escape to coastal bliss with our exquisite rentals. Enjoy ocean views, relaxation, and cherished memories in paradise.</p>
+      <button className="btn btn-primary">View Details</button>
+    </div>
+  </div>
+</div>
+<div className="hero my-10 bg-base-200" data-aos="slide-down">
+  <div className="hero-content flex-col lg:flex-row">
+    <img src="https://i.ibb.co/VVXrWGB/swimming-pool-beach-luxury-hotel-type-entertainment-complex-amara-dolce-vita-luxury-hotel-resort-tek.jpg" className="max-w-sm rounded-lg shadow-2xl" />
+    <div>
+      <h1 className="text-5xl font-bold"> Lodges</h1>
+      <p className="py-6"> Nestled amidst nature embrace, discover tranquility, comfort, and adventure. Experience serenity and rejuvenation in our rustic yet luxurious lodgings.</p>
+      <button className="btn btn-primary">View Details</button>
+    </div>
+  </div>
+</div>
+<div className="hero my-10 bg-base-200" data-aos="zoom-out">
+  <div className="hero-content flex-col lg:flex-row">
+    <img src="https://i.ibb.co/f8XdVBw/beautiful-outdoor-swimming-pool-with-coconut-palm-tree.jpg" className="max-w-sm rounded-lg shadow-2xl" />
+    <div>
+      <h1 className="text-5xl font-bold">Guesthouses</h1>
+      <p className="py-6">Experience warmth, comfort, and personalized hospitality. Immerse yourself in seaside charm and create cherished memories in our welcoming accommodations.</p>
+      <button className="btn btn-primary">View Details</button>
     </div>
   </div>
 </div>
