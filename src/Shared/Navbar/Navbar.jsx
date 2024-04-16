@@ -6,7 +6,9 @@ import { AuthContext } from "../../Providers/AuthProviders";
 
 const Navbar = () => {
 
-    const {user,logOut} = useContext(AuthContext);
+    const {user,logOut,profilePicture} = useContext(AuthContext);
+    // const profilePic = user.photoURL;
+    // const profilePic = loading(user.photoURL);
     
 
   const handleSignOut =() =>{
@@ -15,11 +17,18 @@ const Navbar = () => {
     .catch()
   }
 
+  const photo =() =>{
+    profilePicture()
+    .then()
+    .catch()
+
+  }
+
     const navLinks =<>
     <li><NavLink to='/'>Home</NavLink></li>
-    <li><NavLink to='/updateProfile'>Update
-Profile</NavLink></li>
     <li><NavLink to='/about'>About</NavLink></li>
+    <li><NavLink to='/property'>Property</NavLink></li>
+    <li><NavLink to='/updateProfile'>Update Profile</NavLink></li>
     
     </>
     return (
@@ -47,17 +56,27 @@ Profile</NavLink></li>
 
   <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
-          <img alt="Tailwind CSS Navbar component" src={userDefaultPic} />
+          {/* <img alt="Tailwind CSS Navbar component" src={profilePic} /> */}
+          {/* <img alt="Tailwind CSS Navbar component" src={userDefaultPic} /> */}
+          {/* <img alt="Tailwind CSS Navbar component" src={profilePic} /> */}
+
+
+          {
+                user && <div>
+                    <img alt="Tailwind CSS Navbar component" src={user?.photoURL} />
+                </div>
+            }
         </div>
       </div>
    
   </div>
 
+{/* <img src="" alt="" /> */}
 
             {
 
           user?
-          <button onClick={handleSignOut} className="btn">Sign Out</button>
+          <button onClick={handleSignOut} className="btn">Log Out</button>
           :
 
           <Link to='/login'>

@@ -7,6 +7,8 @@ import ErrorPage from "../Pages/ErrorPages/ErrorPage";
 import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 import PrivateRoute from "./PrivateRoute";
 import Estate from "../Pages/Estate";
+import About from "../Pages/About/About";
+import Property from "../Pages/Property/Property";
 
 
 const router = createBrowserRouter([
@@ -43,6 +45,14 @@ const router = createBrowserRouter([
         {
             path:'/register',
             element:<Register></Register>
+        },
+        {
+          path:'/about',
+          element:<About></About>
+        },
+        {
+          path:'/property',
+          element:<Property></Property>
         },
 
       ]
