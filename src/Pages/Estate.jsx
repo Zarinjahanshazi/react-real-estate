@@ -46,18 +46,26 @@ const Estate = () => {
                     <div className="bg-slate-500 p-8 rounded-[30px]">
                     <h1 className="mb-5 text-2xl font-bold text-red-400">{land.estate_title}</h1>
                     <p className="mb-5">{land.description}</p>
-                    <div className="items-center">
-                    <div className="flex justify-center gap-4">
+                    
+                    <div className="flex items-center justify-between gap-4">
                     <p><span className="text-red-400">Price:</span>{land.price}</p>
                     <p><span className="text-red-400">Status:</span>{land.status}</p>
                     </div>
-                    <div className="flex justify-center gap-4">
+                    <div className="flex items-center justify-between gap-4">
                     <p><span className="text-red-400">Area:</span>{land.area}</p>
                     <p><span className="text-red-400">Location:</span>{land.location}</p>
                     </div>
+                    <p className='border-b-2'></p>
+                    <div className='flex'>
+                    <span className="text-red-400">Facilities:</span>
+                    {
+                        land.facilities?.map((facilitie) => <p className="   mr-3 ">{facilitie}</p>)
+                    }
                     </div>
+                    <p className='border-b-2'></p>
+                    <button className="btn btn-outline btn-info m-2">{land.segment_name}</button>
                     
-                    <Link to='/'><button className="btn btn-primary">Back to Home</button></Link>
+                    <Link to='/'><button className="btn w-full m-2 btn-primary">Back to Home</button></Link>
                     </div>
                     </div>
                 </div>

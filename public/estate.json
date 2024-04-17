@@ -58,6 +58,18 @@
       "location": "Rural Countryside",
       "facilities": ["Garden Patio", "Home-cooked Breakfast", "Bicycle Rentals"],
       "image": "https://i.ibb.co/hK4NT9n/relax-area-resort.jpg"
+    },
+    {
+      "id": 6,
+      "estate_title": "Paradise Motels",
+      "segment_name": "Motels",
+      "description": " Your gateway to bliss. Experience comfort, convenience, and relaxation in our tranquil accommodations. Your perfect stay in paradise awaits.",
+      "price": "$130 per night",
+      "status": "rent",
+      "area": "1300 sq ft",
+      "location": "Pine Valley",
+      "facilities": ["Hiking Trails Access", "Home-cooked Breakfast", "Direct Beach Access"],
+      "image": "https://i.ibb.co/BTN0sfj/luxury-bedroom-hotel.jpg"
     }
   ]
   
