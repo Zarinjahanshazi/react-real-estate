@@ -98,16 +98,26 @@ const Navbar = () => {
         </div>
 
         {/* <img src="" alt="" /> */}
-
-        {user ? (
-          <button onClick={handleSignOut} className="btn">
+        {/* handleSignOut */}
+        {/* {user ? (
+          <button onClick={} className="btn">
             Log Out
           </button>
         ) : (
           <Link to="/login">
             <button className="btn">Log In</button>
           </Link>
-        )}
+        )} */}
+
+            <button className="">
+                <Link to="/login">
+                  {user && user ? (
+                    <span className="md:btn text-white rounded btn-sm py-2 md:px-6 bg-[#A62F03] md:bg-[#A62F03] md:text-white md:hover:bg-[#A62F03]" onClick={handleSignOut}>Logout</span>
+                  ) : (
+                    <span className="md:btn text-white rounded btn-sm py-2 md:px-6 bg-[#A62F03] md:bg-[#A62F03] md:text-white md:hover:bg-[#A62F03]">Login</span>
+                  )}
+                </Link>
+              </button>
       </div>
     </div>
   );

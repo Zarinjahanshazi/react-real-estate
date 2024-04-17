@@ -2,6 +2,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../Shared/Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+
 import {
   GithubAuthProvider,
   GoogleAuthProvider,
@@ -10,57 +13,54 @@ import {
 } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 // import { setDataInLocalStorage } from "../../utils/storage-manager";
-import { setDataInLocalStorage } from "../../Shared/utils/storage-manager";
-import { toast } from "react-toastify";
+// import { setDataInLocalStorage } from "../../Shared/utils/storage-manager";
+// import { toast } from "react-toastify";
 import MetaData from "../../Shared/MetaData";
 
 const LOgin = () => {
   // const [user,setUser] = useState(null);
-  const { signIn } = useContext(AuthContext);
+  const { signIn,googleLogin } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   // console.log("location in the login page", location);
 
-  const from = location?.state?.pathname || "/";
+  
 
   const auth = getAuth(app);
-  const googleProvider = new GoogleAuthProvider();
+  // const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
 
   const handleGoogleSignIn = () => {
-    signInWithPopup(auth, googleProvider)
+    console.log("hello")
+      googleLogin()
       .then((result) => {
-        const user = result.user;
-        setDataInLocalStorage("auth-info", {
-          email: user?.email,
-          displayName: user?.displayName,
-          photoURL: user?.photoURL,
-        });
-
-        toast.success("Login successfully");
-
-        //navigate after login
-        navigate(from);
+        toast.success("Account successfully login.");
+        setTimeout(() => {
+          navigate(location.state ? location.state : "/")
+        }, 1000);
       })
       .catch((error) => {
-        toast.error(error.message);
-      });
+        toast.error("Something was wrong.");
+      })
   };
 
   const handleGithubSignIn = () => {
     signInWithPopup(auth, githubProvider)
       .then((result) => {
         const user = result.user;
-        setDataInLocalStorage("auth-info", {
-          email: user?.email,
-          displayName: user?.displayName,
-          photoURL: user?.photoURL,
-        });
+        // setDataInLocalStorage("auth-info", {
+        //   email: user?.email,
+        //   displayName: user?.displayName,
+        //   photoURL: user?.photoURL,
+        // });
 
         toast.success("Login successfully");
+        setTimeout(() => {
+          navigate(location.state ? location.state : "/")
+        }, 1000);
 
         //navigate after login
-        navigate(from);
+        // navigate(from);
       })
       .catch((error) => {
         toast.error(error.message);
@@ -79,24 +79,28 @@ const LOgin = () => {
       .then((result) => {
         // console.log(result.user);
         const user = result.user;
-        setDataInLocalStorage("auth-info", {
-          email: user?.email,
-          displayName: user?.displayName,
-          photoURL: user?.photoURL,
-        });
-
+        // setDataInLocalStorage("auth-info", {
+        //   email: user?.email,
+        //   displayName: user?.displayName,
+        //   photoURL: user?.photoURL,
+        // });
+        e.target.reset();
         toast.success("Login successfully");
+        setTimeout(() => {
+          navigate(location.state ? location.state : "/")
+        }, 1000);
 
         //navigate after login
-        navigate(from);
+        // navigate(from);
       })
       .catch((error) => {
-        toast.error(error.message);
+        toast.error('incorrect email or password');
       });
   };
 
   return (
     <div>
+      <ToastContainer />
       <MetaData title={"Login"} />
       <Navbar />
       <div>

@@ -1,15 +1,19 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import Navbar from "../../Shared/Navbar/Navbar";
+// import Navbar from "../../Shared/Navbar/Navbar";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 // import { ToastContainer, toast } from 'react-toastify';
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";
 // import { setDataInLocalStorage } from "../../utils/storage-manager";
-import { setDataInLocalStorage } from "../../Shared/utils/storage-manager";
+// import { setDataInLocalStorage } from "../../Shared/utils/storage-manager";
 // import { toast } from "react-toastify";
 import MetaData from "../../Shared/MetaData";
 import { updateProfile } from "firebase/auth";
+import { Helmet } from "react-helmet-async";
+import Navbar from "../../Shared/Navbar/Navbar";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -32,6 +36,11 @@ const Register = () => {
     const password = form.get("password");
     console.log(name,email,password,photo)
     
+     //  reset error and success
+    setRegisterError("");
+    setSuccess("");
+
+
     if(name === "" || email === "" || password === "" || photo === ""){
       console.log("Input field must not be empty.");
     }else if (!/[A-Z]/.test(password) || !/[a-z]/.test(password)) {
@@ -64,8 +73,13 @@ const Register = () => {
 
   return (
     <div>
-      <MetaData title={"Register"} />
-      <Navbar />
+      <ToastContainer />
+      {/* <Helmet>
+        <title>Register</title>
+      </Helmet> */}
+      {/* <MetaData title={"Register"} /> */}
+      <Navbar></Navbar>
+
 
       <div>
         <h2 className="text-3xl my-10 text-center">Please Register</h2>
