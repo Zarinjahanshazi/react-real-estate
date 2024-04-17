@@ -27,9 +27,9 @@ const AuthProviders = ({children}) => {
         return signOut(auth);
        }
 
-       const profilePicture = (photoURL) =>{
+       const profilePicture = (name,photoURL) =>{
         setLoading(true);
-        return updateProfile(auth,photoURL)
+        return updateProfile(auth,name,photoURL)
        }
 
 

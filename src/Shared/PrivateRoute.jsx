@@ -1,9 +1,12 @@
 import { useContext } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProviders";
+import Navbar from "./Navbar/Navbar";
+import Footer from "./Footer/Footer";
 
 
 const PrivateRoute = ({children}) => {
+    <Navbar></Navbar>
    
     const {user,loading} = useContext(AuthContext);
     const location = useLocation();
@@ -21,6 +24,8 @@ const PrivateRoute = ({children}) => {
    
     // return <Navigate state={location.pathname} to='/login'></Navigate>
     return <Navigate state={location} replace to="/login"></Navigate>;
+
+    
 };
 
 export default PrivateRoute;

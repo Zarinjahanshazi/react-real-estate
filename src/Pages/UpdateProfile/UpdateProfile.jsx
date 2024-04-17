@@ -1,9 +1,12 @@
+import { getAuth, updateProfile } from "firebase/auth";
 import Footer from "../../Shared/Footer/Footer";
 import MetaData from "../../Shared/MetaData";
 import Navbar from "../../Shared/Navbar/Navbar";
 import { useForm } from "react-hook-form";
+import app from "../../firebase/firebase.config";
 
 const UpdateProfile = () => {
+    // const auth = getAuth(app);
   const {
     register,
     handleSubmit,
@@ -13,7 +16,23 @@ const UpdateProfile = () => {
   const onSubmit = (data) => {
     console.log(data);
     //TODO: Write logic to save the updated information to firebase
+
+    
   };
+
+//   updateProfile(auth.currentUser, {
+//     // displayName: "Jane Q. User", photoURL: "https://example.com/jane-q-user/profile.jpg"
+//   }).then((result) => {
+//     const user = result.user
+//     console.log(user)
+    
+//   }).catch((error) => {
+//     console.error(error.message)
+    
+//   });
+
+
+  
 
   return (
     <div>

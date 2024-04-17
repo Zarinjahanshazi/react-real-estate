@@ -62,7 +62,7 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="btn btn-ghost text-2xl">Ocean Heaven</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
@@ -78,10 +78,16 @@ const Navbar = () => {
               {/* <img alt="Tailwind CSS Navbar component" src={userDefaultPic} /> */}
               {/* <img alt="Tailwind CSS Navbar component" src={profilePic} /> */}
 
+              {/* <div className="lg:tooltip" data-tip="hello">
+  
+              </div>
+
+<button className="btn">Hover me</button> */}
+
               {user ? (
                 <div className="flex justify-center items-center h-full">
                   {user?.photoURL ? (
-                    <img alt="avatar" src={user?.photoURL} />
+                    <img  alt="avatar" src={user?.photoURL} />
                   ) : (
                     <RxAvatar className="h-8 w-8" />
                   )}

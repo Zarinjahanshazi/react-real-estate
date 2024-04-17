@@ -7,8 +7,9 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";
 // import { setDataInLocalStorage } from "../../utils/storage-manager";
 import { setDataInLocalStorage } from "../../Shared/utils/storage-manager";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import MetaData from "../../Shared/MetaData";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -21,58 +22,44 @@ const Register = () => {
 
   const from = location?.state?.pathname || "/";
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
-    // console.log(e.currentTarget);
+    
     const form = new FormData(e.currentTarget);
-
     const name = form.get("name");
-    const photo = form.get("photo");
     const email = form.get("email");
+    const photo = form.get("photo");
     const password = form.get("password");
-    // console.log(name,photo,email,password);
-
-    //  reset error and success
-    setRegisterError("");
-    setSuccess("");
-
-    if (password.length < 6) {
-      setRegisterError("password should be at least 6 characters or longer");
-      return;
-    } else if (!/[A-Z]/.test(password)) {
-      setRegisterError(
-        "your password should have at least one uppercase characters"
-      );
-      return;
-    } else if (!/[a-z]/.test(password)) {
-      setRegisterError(
-        "your password should have at least one LowerCase characters"
-      );
-      return;
+    console.log(name,email,password,photo)
+    
+    if(name === "" || email === "" || password === "" || photo === ""){
+      console.log("Input field must not be empty.");
+    }else if (!/[A-Z]/.test(password) || !/[a-z]/.test(password)) {
+      console.log("Password should contain both uppercase and lowercase characters.");
+    
+    }else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+      console.log("Please provide an valid Email.");
+    }else if(password.length < 6){
+      console.log("Password must be at least 6 characters.");
     }
-
-    // create user
-
-    createUser(email, password)
-      .then((result) => {
-        console.log(result.user);
-        setSuccess("user created successfully");
-        const user = result.user;
-        setDataInLocalStorage("auth-info", {
-          email: user?.email,
-          displayName: user?.displayName,
-          photoURL: user?.photoURL,
+    else{
+      createUser(email, password)
+      .then((result)=>{
+        updateProfile(result.user, {
+          displayName: name,
+          photoURL: photo
+        }).then(() => {
+        }).catch((error) => {
+          console.log(error)
         });
-
-        toast.success("Registration Successful");
-
-        // navigate after successful registration
-        navigate(from);
+        console.log("Account created successfully.")
+        console.log(result.user)
+        e.target.reset();
       })
-      .catch((error) => {
-        toast.error(error.message);
-        setRegisterError(error.message);
-      });
+      .catch((error)=>{
+        console.log("An account already exists!")
+      })
+    }
   };
 
   return (
