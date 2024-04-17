@@ -54,13 +54,14 @@ const AuthProviders = ({children}) => {
 
     const authInfo ={
         user,
+        setUser,
         createUser,
         signIn,
         logOut,
         loading,
         profilePicture,
         googleLogin,
-        
+
 
 
         

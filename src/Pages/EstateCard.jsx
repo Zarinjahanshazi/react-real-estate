@@ -8,7 +8,7 @@ const EstateCard = ({estate}) => {
         <figure><img src={image} alt="Shoes" /></figure>
         <div className="card-body">
           <h2 className="card-title">{estate_title}</h2>
-          <div className="flex gap-4 text-[#17BE0A]">
+          <div className="flex flex-col md:flex-row gap-4 text-[#17BE0A]">
             <p>{segment_name}</p>
             <p>{status}</p>
           </div>
@@ -24,12 +24,12 @@ const EstateCard = ({estate}) => {
             }
 
           
-          <div className="flex gap-4 text-blue-400">
+          <div className="flex flex-col md:flex-row gap-4 text-blue-400">
             <p>{price}</p>
             <p>{area}</p>
           </div>
-          <div className='flex'>
-                        <h1 className='flex gap-2 items-center'><span className="">facilities:</span>
+          <div className='flex flex-col md:flex-row'>
+                        <h1 className='flex flex-col md:flex-row gap-2 items-center'><span className="">facilities:</span>
                         {
                         facilities?.map((facilitie,idx) => <p key={idx} className='flex'><span><p className=" text-[#23BE0A]  mr-1">{facilitie}</p></span></p>)
                     }

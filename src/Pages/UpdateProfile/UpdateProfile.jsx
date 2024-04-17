@@ -8,9 +8,11 @@ import { Helmet } from "react-helmet-async";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 import Navbar from "../../Shared/Navbar/Navbar";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const UpdateProfile = () => {
-  const { user } = useContext(AuthContext);
+  const { user,setUser } = useContext(AuthContext);
 
   const {
     register,
@@ -21,17 +23,19 @@ const UpdateProfile = () => {
   const onSubmit = async (data) => {
     try {
       await updateUserData(data);
-      // toast.success("Profile updated successfully");
-      console.log("Profile updated successfully");
+      setUser({...user,displayName:data.displayName,photoURL:data.photoURL});
+      toast.success("Profile updated successfully");
+      // consol("Profile updated successfully");
     } catch (error) {
       console.log(error.message);
-      // toast.error(error.message);
-      console.log(error.message);
+      toast.error(error.message);
+      // console.log(error.message);
     }
   };
 
   return (
     <div>
+      <ToastContainer />
       <Helmet>
         <title>update profile</title>
       </Helmet>
@@ -45,7 +49,13 @@ const UpdateProfile = () => {
         <h2 className="text-3xl my-10 text-center">Update profile</h2>
         <div className="flex justify-center">
           <img className="w-[200px] object-cover h-[200px] rounded-2xl"  src={user?.photoURL} alt="" />
+          
         </div>
+        <div className="text-center">
+        <p>Name:{user?.displayName}</p>
+          <p>PhotoURL:{user?.photoURL}</p>
+        </div>
+
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="card-body mx-auto md:w-3/4 lg:w-1/2"
@@ -79,6 +89,7 @@ const UpdateProfile = () => {
               className="input input-bordered"
               defaultValue={user?.email}
               {...register("email")}
+              disabled
             />
             {/* {errors.email && (
               <span className="font-semibold text-red-500">

@@ -23,7 +23,7 @@ const Register = () => {
   const [success, setSuccess] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const { createUser } = useContext(AuthContext);
+  const { user,createUser,setUser } = useContext(AuthContext);
 
   const from = location?.state?.pathname || "/";
 
@@ -43,14 +43,14 @@ const Register = () => {
 
 
     if(name === "" || email === "" || password === "" || photo === ""){
-      console.log("Input field must not be empty.");
+      toast("Input field must not be empty.");
     }else if (!/[A-Z]/.test(password) || !/[a-z]/.test(password)) {
-      console.log("Password should contain both uppercase and lowercase characters.");
+      toast("Password should contain both uppercase and lowercase characters.");
     
     }else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
-      console.log("Please provide an valid Email.");
+      toast("Please provide an valid Email.");
     }else if(password.length < 6){
-      console.log("Password must be at least 6 characters.");
+      toast("Password must be at least 6 characters.");
     }
     else{
       createUser(email, password)
@@ -59,15 +59,20 @@ const Register = () => {
           displayName: name,
           photoURL: photo
         }).then(() => {
+          setUser({...user, name: name, photoURL: photo})
         }).catch((error) => {
           console.log(error)
         });
-        console.log("Account created successfully.")
+        toast.success("Account created successfully.")
+        setTimeout(() => {
+          navigate(location.state ? location.state : "/")
+        }, 1000);
+        
         console.log(result.user)
         e.target.reset();
       })
       .catch((error)=>{
-        console.log("An account already exists!")
+        toast.error("An account already exists!")
       })
     }
   };

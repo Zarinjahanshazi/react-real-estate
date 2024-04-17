@@ -1,10 +1,14 @@
 import { Link, NavLink } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { RxAvatar } from "react-icons/rx";
 
 const Navbar = () => {
   const { user, logOut, profilePicture } = useContext(AuthContext);
+  const[currentuser,setCurrentUser] = useState()
+  useEffect(() =>{
+    setCurrentUser(user)
+  },[user])
   // const profilePic = user.photoURL;
   // const profilePic = loading(user.photoURL);
 
@@ -57,18 +61,18 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3  z-[10] p-2 shadow bg-base-100 rounded-box w-52"
             >
               {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost text-2xl">Ocean Heaven</a>
+          <a className="btn btn-ghost text-[16px] md:text-2xl">Ocean Heaven</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end mr-4">
-        <div className="tooltip lg:tooltip-left" data-tip={user?.displayName}>
+        <div className="tooltip lg:tooltip-left" data-tip={currentuser?.displayName}>
         <div
             tabIndex={0}
             role="button"
@@ -79,7 +83,7 @@ const Navbar = () => {
               {user ? (
                 <div className="flex border justify-center items-center h-full">
                   {user?.photoURL ? (
-                    <img  alt="avatar" src={user?.photoURL} />
+                    <img  alt="avatar" src={currentuser?.photoURL} />
                   ) : (
                     <RxAvatar className="h-8 w-8" />
                   )}

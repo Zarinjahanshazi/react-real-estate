@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
-      // errorElement:<ErrorPage></ErrorPage>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
             path:'/',
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
         // },
         {
             path:'/updateProfile',
-            element:<UpdateProfile></UpdateProfile>
+            element:<PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>
         },
         {
           path:'/estate/:id',
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
         },
         {
           path:'/property',
-          element:<Property></Property>
+          element:<PrivateRoute><Property></Property></PrivateRoute>
         },
 
       ]
