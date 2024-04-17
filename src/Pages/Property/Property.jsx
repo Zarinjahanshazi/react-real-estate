@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Footer from "../../Shared/Footer/Footer";
 import Navbar from "../../Shared/Navbar/Navbar";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Helmet } from "react-helmet-async";
 
 import 'swiper/css';
 import AOS from 'aos';
@@ -16,6 +17,9 @@ const Property = () => {
     },[])
     return (
         <div>
+          <Helmet>
+        <title>Property</title>
+      </Helmet>
             
 
             <div>

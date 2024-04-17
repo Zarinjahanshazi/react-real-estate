@@ -14,6 +14,7 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "../../Shared/Navbar/Navbar";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+  
 
 const Register = () => {
   const navigate = useNavigate();
@@ -74,14 +75,15 @@ const Register = () => {
   return (
     <div>
       <ToastContainer />
-      {/* <Helmet>
+      <Helmet>
         <title>Register</title>
-      </Helmet> */}
+      </Helmet>
       {/* <MetaData title={"Register"} /> */}
-      <Navbar></Navbar>
+      
 
 
       <div>
+     
         <h2 className="text-3xl my-10 text-center">Please Register</h2>
         <form
           onSubmit={handleRegister}

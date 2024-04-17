@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+  import { Helmet } from "react-helmet-async";
 
 import {
   GithubAuthProvider,
@@ -100,9 +101,12 @@ const LOgin = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Login</title>
+      </Helmet>
       <ToastContainer />
       <MetaData title={"Login"} />
-      <Navbar />
+      
       <div>
         <h2 className="text-3xl my-10 text-center">Please Login</h2>
         <form

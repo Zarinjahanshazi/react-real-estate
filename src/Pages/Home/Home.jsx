@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Navbar from "../../Shared/Navbar/Navbar";
 import Footer from "../../Shared/Footer/Footer";
 import EstateCard from "../EstateCard";
+import { Helmet } from "react-helmet-async";
 
 
 const Home = () => {
@@ -9,6 +10,9 @@ const Home = () => {
     console.log(estates);
     return (
         <div>
+            <Helmet>
+        <title>Home</title>
+      </Helmet>
             
 
             {/* banner */}

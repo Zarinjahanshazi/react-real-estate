@@ -68,7 +68,7 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end mr-4">
-        <div className="tooltip lg:tooltip-left" data-tip={user.displayName}>
+        <div className="tooltip lg:tooltip-left" data-tip={user?.displayName}>
         <div
             tabIndex={0}
             role="button"

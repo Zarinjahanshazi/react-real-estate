@@ -32,9 +32,9 @@ const UpdateProfile = () => {
 
   return (
     <div>
-      {/* <Helmet>
+      <Helmet>
         <title>update profile</title>
-      </Helmet> */}
+      </Helmet>
       {/* <MetaData title={"Update Profile"} />
       <MetaData title={"Update Profile"}></MetaData> */}
       
@@ -44,7 +44,7 @@ const UpdateProfile = () => {
 
         <h2 className="text-3xl my-10 text-center">Update profile</h2>
         <div className="flex justify-center">
-          <img className="w-[200px] object-cover h-[200px] rounded-2xl"  src={user.photoURL} alt="" />
+          <img className="w-[200px] object-cover h-[200px] rounded-2xl"  src={user?.photoURL} alt="" />
         </div>
         <form
           onSubmit={handleSubmit(onSubmit)}
@@ -58,7 +58,7 @@ const UpdateProfile = () => {
               type="text"
               name="displayName"
               placeholder="Name"
-              defaultValue={user.displayName}
+              defaultValue={user?.displayName}
               className="input input-bordered"
               {...register("displayName")}
             />
