@@ -16,7 +16,7 @@ const Property = () => {
     },[])
     return (
         <div>
-            <Navbar></Navbar>
+            
 
             <div>
             <Swiper
@@ -105,7 +105,7 @@ const Property = () => {
     </div>
   </div>
 </div>
-            <Footer></Footer>
+            
         </div>
     );
 };

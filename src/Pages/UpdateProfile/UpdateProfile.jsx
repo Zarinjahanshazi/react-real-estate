@@ -1,5 +1,5 @@
 import Footer from "../../Shared/Footer/Footer";
-import MetaData from "../../Shared/MetaData";
+// import MetaData from "../../Shared/MetaData";
 // import Navbar from "../../Shared/Navbar/Navbar";
 import { useForm } from "react-hook-form";
 import { updateUserData } from "../../Shared/utils/firebase-manager";
@@ -15,7 +15,7 @@ const UpdateProfile = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
   } = useForm();
 
   const onSubmit = async (data) => {
@@ -32,12 +32,12 @@ const UpdateProfile = () => {
 
   return (
     <div>
-      <Helmet>
+      {/* <Helmet>
         <title>update profile</title>
-      </Helmet>
+      </Helmet> */}
       {/* <MetaData title={"Update Profile"} />
       <MetaData title={"Update Profile"}></MetaData> */}
-      <Navbar></Navbar>
+      
 
       <div>
       
@@ -113,7 +113,7 @@ const UpdateProfile = () => {
         </form>
       </div>
 
-      <Footer></Footer>
+      
     </div>
   );
 };

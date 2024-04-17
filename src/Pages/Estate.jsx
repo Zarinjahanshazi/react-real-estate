@@ -21,7 +21,7 @@ const Estate = () => {
     // console.log(id,facilities)
     return (
         <div>
-            <Navbar></Navbar>
+            
             {/* <div className=" lg:grid lg:grid-cols-2 gap-10">
             <div>
                         <img className="rounded-2xl w-[700px] h-[600px]" src={land.image} alt="" />
@@ -74,7 +74,7 @@ const Estate = () => {
 
 
 
-            <Footer></Footer>
+            
         </div>
     );
 };

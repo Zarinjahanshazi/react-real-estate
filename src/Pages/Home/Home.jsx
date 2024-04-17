@@ -9,7 +9,7 @@ const Home = () => {
     console.log(estates);
     return (
         <div>
-            <Navbar></Navbar>
+            
 
             {/* banner */}
 
@@ -56,7 +56,7 @@ const Home = () => {
 
             </div>
 
-            <Footer></Footer>
+            
         </div>
     );
 };

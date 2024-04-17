@@ -68,24 +68,16 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end mr-4">
-          <div
+        <div className="tooltip lg:tooltip-left" data-tip={user.displayName}>
+        <div
             tabIndex={0}
             role="button"
-            className="btn btn-ghost btn-circle avatar"
+            className="btn btn-ghost  btn-circle avatar" 
           >
-            <div className="w-10 rounded-full">
-              {/* <img alt="Tailwind CSS Navbar component" src={profilePic} /> */}
-              {/* <img alt="Tailwind CSS Navbar component" src={userDefaultPic} /> */}
-              {/* <img alt="Tailwind CSS Navbar component" src={profilePic} /> */}
-
-              {/* <div className="lg:tooltip" data-tip="hello">
-  
-              </div>
-
-<button className="btn">Hover me</button> */}
+            <div className="w-10  rounded-full" >
 
               {user ? (
-                <div className="flex justify-center items-center h-full">
+                <div className="flex border justify-center items-center h-full">
                   {user?.photoURL ? (
                     <img  alt="avatar" src={user?.photoURL} />
                   ) : (
@@ -95,6 +87,9 @@ const Navbar = () => {
               ) : null}
             </div>
           </div>
+  
+</div>
+          
         </div>
 
         {/* <img src="" alt="" /> */}
