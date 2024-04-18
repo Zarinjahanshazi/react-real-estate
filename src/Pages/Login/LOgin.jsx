@@ -102,7 +102,7 @@ const LOgin = () => {
   return (
     <div>
       <Helmet>
-        <title>Login</title>
+        <title>Ocean Heaven|Login</title>
       </Helmet>
       <ToastContainer />
       <MetaData title={"Login"} />

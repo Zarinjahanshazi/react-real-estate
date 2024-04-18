@@ -81,7 +81,7 @@ const Register = () => {
     <div>
       <ToastContainer />
       <Helmet>
-        <title>Register</title>
+        <title>Ocean Heaven|Register</title>
       </Helmet>
       {/* <MetaData title={"Register"} /> */}
       

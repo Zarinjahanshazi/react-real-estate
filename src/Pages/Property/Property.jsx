@@ -18,7 +18,7 @@ const Property = () => {
     return (
         <div>
           <Helmet>
-        <title>Property</title>
+        <title>Ocean Heaven|Property</title>
       </Helmet>
             
 

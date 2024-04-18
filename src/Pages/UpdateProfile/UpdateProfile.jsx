@@ -37,7 +37,7 @@ const UpdateProfile = () => {
     <div>
       <ToastContainer />
       <Helmet>
-        <title>update profile</title>
+        <title>Ocean Heaven|update profile</title>
       </Helmet>
       {/* <MetaData title={"Update Profile"} />
       <MetaData title={"Update Profile"}></MetaData> */}

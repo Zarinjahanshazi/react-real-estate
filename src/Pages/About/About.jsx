@@ -9,7 +9,7 @@ const About = () => {
     return (
         <div>
             <Helmet>
-        <title>About Us</title>
+        <title>Ocean Heaven|About</title>
       </Helmet>
         
             <div className="mt-10 text-center">
