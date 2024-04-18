@@ -24,7 +24,6 @@ Embrace serenity with breathtaking ocean views, luxurious comfort, and impeccabl
 - AOS Package
 - React Hook form
 - Swiper slider
-- react-toastify
 
 ## Live Link
 - https://react-real-estate-1fc94.web.app
