@@ -23,7 +23,7 @@ const Register = () => {
   const [success, setSuccess] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const { user,createUser,setUser } = useContext(AuthContext);
+  const { user,createUser,setUser,profilePicture } = useContext(AuthContext);
 
   const from = location?.state?.pathname || "/";
 
@@ -55,11 +55,10 @@ const Register = () => {
     else{
       createUser(email, password)
       .then((result)=>{
-        updateProfile(result.user, {
-          displayName: name,
-          photoURL: photo
-        }).then(() => {
-          setUser({...user, name: name, photoURL: photo})
+        profilePicture(name,photo).then(() => {
+          setUser((prevUser)=> {
+            return {...prevUser, displayName:name, photoURL: photo};
+          })
         }).catch((error) => {
           console.log(error)
         });

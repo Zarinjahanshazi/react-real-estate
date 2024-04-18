@@ -12,7 +12,7 @@ import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 
 const UpdateProfile = () => {
-  const { user,setUser } = useContext(AuthContext);
+  const { user,setUser,profilePicture } = useContext(AuthContext);
 
   const {
     register,
@@ -20,10 +20,12 @@ const UpdateProfile = () => {
     // formState: { errors },
   } = useForm();
 
-  const onSubmit = async (data) => {
+  const onSubmit = (data) => {
     try {
-      await updateUserData(data);
-      setUser({...user,displayName:data.displayName,photoURL:data.photoURL});
+      profilePicture(data.displayName,data.photoURL)
+      .then(() =>{
+        setUser({...user,displayName:data.displayName,photoURL:data.photoURL});
+      })
       toast.success("Profile updated successfully");
       // consol("Profile updated successfully");
     } catch (error) {
