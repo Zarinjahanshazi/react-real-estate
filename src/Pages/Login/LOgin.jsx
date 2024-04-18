@@ -20,7 +20,7 @@ import MetaData from "../../Shared/MetaData";
 
 const LOgin = () => {
   // const [user,setUser] = useState(null);
-  const { signIn,googleLogin } = useContext(AuthContext);
+  const { signIn,googleLogin,updateProfile } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   // console.log("location in the login page", location);
@@ -49,6 +49,8 @@ const LOgin = () => {
     signInWithPopup(auth, githubProvider)
       .then((result) => {
         const user = result.user;
+        updateProfile(user.displayName,user.photoURL);
+        
         // setDataInLocalStorage("auth-info", {
         //   email: user?.email,
         //   displayName: user?.displayName,

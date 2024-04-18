@@ -61,6 +61,7 @@ const AuthProviders = ({children}) => {
         loading,
         profilePicture,
         googleLogin,
+        updateProfile
 
 
 
